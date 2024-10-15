@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div className=' w-[300px]'>
+  
+        
+
+
+          {isEditing?
+           <form >
+           <div className="flex justify-between text-gray-700" >
+             
+             <input onChange={(e)=> setValue(id,e.target.value)} value={taskName} type="text " placeholder='update task'  className=" border-2 px-1 border-gray-400"/>
+             
+           <button onClick={editTask} className="font-semibold bg-gray-100 text-slate-600 px-2 text-2xl rounded border-2 border-gray-400 hover:bg-gray-400">Update</button>
+           
+           </div>
+           </form>
+            :

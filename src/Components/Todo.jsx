@@ -5,12 +5,18 @@ import EditIcon from '@mui/icons-material/Edit';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 
-const Todo = ({index,taskName,id,deleteTask,Complete,done,handleEditToggle,isEditing,changeUpdate}) => {
+const Todo = ({index,taskName,id,deleteTask,Complete,done,editToDo}) => {
   const [icon,changeIcon]=useState(done)
   const iconChage=()=>{
     changeIcon(icon)
     
   }
+   
+  const capitalizeFirstLetter=(string)=> {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
+  
   return (
     
     <div key={index}>
@@ -24,21 +30,11 @@ const Todo = ({index,taskName,id,deleteTask,Complete,done,handleEditToggle,isEdi
             </div>
         
           <div className=' w-[300px]'>
+  
+          <div className='flex  justify-between items-center '> 
+            <div><h1  className={`${done?"line-through text-gray-400 ":" text-gray-700"} text-first-letter::first-letter bg-gray-100 rounded-xl px-2 `}>{index+1}.{capitalizeFirstLetter({taskName})} </h1></div>
+            <div><EditIcon onClick={()=>(editToDo(id))} className='hover:text-gray-400'/></div> </div>
             
-          {isEditing?
-          <form action=""> 
-            <input
-              type="text"
-              value={taskName}
-              onClick={(e) => changeUpdate(e.target.value)}
-              className="border rounded p-1 w-52"
-              autoFocus
-            />
-          </form>
-            :<div className='flex  justify-between items-center '> 
-            <div><h1  className={`${done?"line-through text-gray-400 ":" text-gray-700"} text-first-letter bg-gray-100 rounded-xl px-2 `}>{index+1}. {taskName}</h1></div>
-            <div><EditIcon onClick={()=>(handleEditToggle(id))} className='hover:text-gray-400'/></div> </div>
-            }
             
             
           </div>

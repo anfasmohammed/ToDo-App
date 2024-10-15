@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
     @layer utilities {
-        .text-first-letter {
+        .text-first-letter::first-letter {
           text-transform: capitalize; 
         }
       }
