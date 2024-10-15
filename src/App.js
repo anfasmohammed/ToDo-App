@@ -55,19 +55,8 @@ function App() {
     ))
   }
   
+//Edit Task
 
-  // update Task
-/*const handleEditToggle=(id)=>{
-  setTodoList(todoList.map((item)=>
-    item.id===id? {...item,isEditing:!(item.isEditing)}:item
-))
-}
-  const changeUpdate=(id)=>{
-  setTodoList(todoList.map((item)=>
-     item.id === id ? {...item}:item
-  ))
-  handleEditToggle(id)
-}*/
 const editToDo=(id)=>{
 setTodoList(todoList.map((item)=>item.id===id?
 {...item,isEditing:!item.isEditing}:item))
