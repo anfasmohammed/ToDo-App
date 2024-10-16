@@ -18,10 +18,12 @@ function App() {
   //add task
   const addTask=(e)=>{
     e.preventDefault()
-
+    const capitalizeFirstLetter=(string)=> {
+      return string.charAt(0).toUpperCase() + string.slice(1)
+    }
     let task={
       id:todoList.length===0 ? 1 : todoList[todoList.length-1].id +1,
-      taskName:newTask,
+      taskName:capitalizeFirstLetter(newTask),
       completed:false,
       isEditing:false
     }
@@ -77,7 +79,7 @@ const editTask=(taskName,id)=>{
   
   <input onChange={(e)=> setNewTask(e.target.value)} value={newTask} type="text " placeholder="Enter the task...." className="px-9 border-2 border-gray-400"/>
   
-<button onClick={addTask} className="font-semibold bg-gray-100 text-slate-600 px-7 py-2 text-2xl rounded border-2 border-gray-400 hover:bg-gray-400">Add</button>
+<button onClick={addTask} className="font-semibold bg-gray-100 text-slate-600 px-7 py-2 text-2xl rounded border-2 border-gray-400 hover:bg-gray-400 hover:text-gray-100">Add</button>
 
 </div>
 </form>
