@@ -27,7 +27,7 @@ const Todo = ({index,taskName,id,deleteTask,Complete,done,editToDo}) => {
            
             </div>
         
-          <div className=' w-[300px]'>
+          <div className='w-[200px] md:w-[300px]'>
   
           <div className='flex  justify-between items-center '> 
             <div><h1  className={`${done?"line-through text-gray-400 ":" text-gray-700"} text-first-letter::first-letter bg-gray-100 rounded-xl px-2 `}>{index+1}. {taskName} </h1></div>

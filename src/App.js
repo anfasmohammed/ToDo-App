@@ -72,14 +72,14 @@ const editTask=(taskName,id)=>{
   return (
      
   
-<div className="bg-slate-900 bg-opacity-90 flex flex-col gap-9 justify-center items-center h-screen mt-9">
-<h1 className="  text-5xl text-gray-200 font-mono">ToDo List</h1>
+<div className="bg-slate-900 bg-opacity-90 flex flex-col gap-9 justify-center items-center h-screen mt-9 ">
+<h1 className=" text-4xl  md:text-5xl text-gray-200 font-mono">ToDo List</h1>
 <form >
 <div className="flex gap-3" >
   
-  <input onChange={(e)=> setNewTask(e.target.value)} value={newTask} type="text " placeholder="Enter the task...." className="px-9 border-2 border-gray-400"/>
+  <input onChange={(e)=> setNewTask(e.target.value)} value={newTask} type="text " placeholder="Enter the task...." className="px-2 md:px-9 border-2 border-gray-400"/>
   
-<button onClick={addTask} className="font-semibold bg-gray-100 text-slate-600 px-7 py-2 text-2xl rounded border-2 border-gray-400 hover:bg-gray-400 hover:text-gray-100">Add</button>
+<button onClick={addTask} className="font-semibold bg-gray-100 text-slate-600 px-2 py-0 md:px-7 md:py-2 text-xl md:text-2xl rounded border-2 border-gray-400 hover:bg-gray-400 hover:text-gray-100">Add</button>
 
 </div>
 </form>
