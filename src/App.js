@@ -14,13 +14,13 @@ function App() {
   const[todoList,setTodoList]=useState(localData())
   const[newTask,setNewTask]=useState("")
   
-  
+  const capitalizeFirstLetter=(string)=> {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
   //add task
   const addTask=(e)=>{
     e.preventDefault()
-    const capitalizeFirstLetter=(string)=> {
-      return string.charAt(0).toUpperCase() + string.slice(1)
-    }
+    
     let task={
       id:todoList.length===0 ? 1 : todoList[todoList.length-1].id +1,
       taskName:capitalizeFirstLetter(newTask),
@@ -72,7 +72,7 @@ const editTask=(taskName,id)=>{
   return (
      
   
-<div className="bg-slate-900 bg-opacity-90 flex flex-col gap-9 justify-center items-center h-screen mt-9 ">
+<div className="bg-slate-900 bg-opacity-90 flex flex-col gap-9 justify-center items-center h-screen ">
 <h1 className=" text-4xl  md:text-5xl text-gray-200 font-mono">ToDo List</h1>
 <form >
 <div className="flex gap-3" >
@@ -88,7 +88,8 @@ const editTask=(taskName,id)=>{
     return(
       item.isEditing?<EditForm editTask={editTask}
       id={item.id}
-      taskName={item.taskName}/>:
+      taskName={item.taskName}
+      capitalizeFirstLetter={capitalizeFirstLetter}/>:
       <Todo taskName={item.taskName}
       id={item.id}
       index={index}

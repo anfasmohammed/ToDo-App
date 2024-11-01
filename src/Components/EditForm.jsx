@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 
-const EditForm = ({editTask,id,taskName}) => {
+const EditForm = ({editTask,id,taskName,capitalizeFirstLetter}) => {
     const [value,setValue]=useState(taskName)
     const update =(e)=>{
         e.preventDefault()
-         
-        editTask(value,id)
+        let tName=capitalizeFirstLetter(value)
+        editTask(tName,id)
+        
         setValue("")
     }
   return (
